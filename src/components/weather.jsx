@@ -56,7 +56,7 @@ function weather() {
                 <GoSearch />
               </NavLink>
             </div>
-            <div className="w-fit ml-32 -mt-6 h-8 sticky top-0 sm:ml-64 md:ml-80 lg:pl-32 xl:pl-64 2xl:pl-96">
+            <div className="w-full ml-40 pl-3 -mt-6 h-8 sticky top-0 sm:ml-72 md:pl-16 lg:pl-48 xl:pl-80 2xl:ml-0 2xl:pl-96 border">
               <p className="font-bold text-xl">{weatherData.name}</p>
             </div>
           <div className="grid items-center justify-center h-64 mt-7">

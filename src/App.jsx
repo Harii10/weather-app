@@ -13,12 +13,12 @@ function App() {
       const minutes = now.getMinutes()
       let imageUrl;
 
-      if (hour >= 5 && hour < 12) {
-        imageUrl = "images/c-morning.jpg"
+      if (hour >= 5 && hour < 17) {
+        imageUrl = "images/sky.jpg"
       } else if (hour >= 18 && hour < 19) {
         imageUrl = "images/evening.jpg"
       } else {
-        imageUrl = "images/nyt.jpg"
+        imageUrl = "images/night.jpg"
       }
 
       document.body.style.backgroundImage = `url(${imageUrl})`
