@@ -29,7 +29,8 @@ function weather() {
         `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
       );
       const data = await response.json();
-      setWeatherData(data);
+      setWeatherData(data)
+      console.log(data)
     } catch (error) {
       console.error("Error fetching weather data by coordinates:", error);
     }
@@ -56,7 +57,7 @@ function weather() {
                 <GoSearch />
               </NavLink>
             </div>
-            <div className="w-full ml-40 pl-3 -mt-6 h-8 sticky top-0 sm:ml-72 md:pl-16 lg:pl-48 xl:pl-80 2xl:ml-0 2xl:pl-96 border">
+            <div className="w-full ml-40 pl-3 -mt-6 h-8 sticky top-0 sm:ml-72 md:pl-16 lg:pl-48 xl:pl-80 2xl:ml-0 2xl:pl-96">
               <p className="font-bold text-xl">{weatherData.name}</p>
             </div>
           <div className="grid items-center justify-center h-64 mt-7">
@@ -84,7 +85,7 @@ function weather() {
           <div className="flex justify-between p-4 border rounded-lg h-32">
             <div className="flex flex-col justify-center">
               <p className="text-xl font-semibold">Today</p>
-              <p>{weatherData.weather[0].description}</p>
+              <p>{weatherData.weather[0].main}</p>
             </div>
             <div className="mt-8">
               <img

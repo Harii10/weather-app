@@ -35,7 +35,7 @@ function forecast({ data }) {
                   />
                 </div>
                 <div>
-                  <p className="mt-4">{item.weather[0].description}</p>
+                  <p className="mt-4 capitalize">{item.weather[0].description}</p>
                 </div>
                 <div>
                   <p className="text-xs mt-4">
