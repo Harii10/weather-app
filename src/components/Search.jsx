@@ -1,41 +1,37 @@
-import React from "react";
-import { useEffect, useState, useRef } from "react";
-import { GoSearch } from "react-icons/go";
-import { Link, NavLink } from "react-router-dom";
-import { IoMdArrowRoundBack } from "react-icons/io";
-import CityForecast from "./CityForecast";
+import React from "react"
+import { useEffect, useState, useRef } from "react"
+import { GoSearch } from "react-icons/go"
+import { Link, NavLink } from "react-router-dom"
+import { IoMdArrowRoundBack } from "react-icons/io"
+import CityForecast from "./CityForecast"
 
 function Search() {
-  const [locationInfo, setLocationInfo] = useState("");
-  const [location, setLocation] = useState("");
-  const API_KEY = "99ea54ebc825a0dfb653a4c3f5e552d1";
+  const [locationInfo, setLocationInfo] = useState("")
+  const [location, setLocation] = useState("")
+  const API_KEY = "99ea54ebc825a0dfb653a4c3f5e552d1"
 
-  const inputRef = useRef(null);
+  const inputRef = useRef(null)
 
   const search = async () => {
     try {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&appid=${API_KEY}`
-      );
-      const data = await response.json();
-      setLocationInfo(data)
-      if (data && data.someKey) {
-        console.log(data.someKey)
-      } else {
-        console.error("Data or someKey is undefined")
-      }
-    } catch (error) {
-      console.error("Error fetching weather data by city:", error)
-      alert("Invalid City Name", error)
+      )
+      const data = await response.json()
+      setLocationInfo(data) 
+    } 
+    catch (error) {
+      console.error("Error fetching weather data by city:")
+      alert("Invalid City Name")
     }
-  };
+  }
 
   const handleSearch = (e) => {
-    e.preventDefault();
-  };
+    e.preventDefault()
+  }
   const handleInputChange = (e) => {
-    setLocation(e.target.value);
-  };
+    setLocation(e.target.value)
+  }
 
   return (
     <div className=" bg-black h-lvh text-white">
@@ -62,7 +58,7 @@ function Search() {
         <div>{locationInfo && <CityForecast value={locationInfo} />}</div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Search;
+export default Search

@@ -51,13 +51,13 @@ function weather() {
     <div className="items-center justify-center h-screen overflow-x-hidden text-white md:w-lvw">
       {weatherData && (
         <div className=" mt-6 md:mt-16">
-          <NavLink to="/weather-app/search" >
-            <div className=" w-fit h-fit ml-11">
+          <div className=" w-fit h-fit ml-11">
+            <NavLink to="/weather-app/search">
               <GoSearch />
-            </div>
-          </NavLink>
-          <div className="w-full ml-40 pl-3 -mt-6 h-8 sm:ml-72 md:pl-16 lg:pl-48 xl:pl-80 2xl:ml-0 2xl:pl-96">
-            <p className="font-bold text-xl">{weatherData.name}</p>
+            </NavLink>
+          </div>
+          <div className="flex justify-center align-middle">
+            <h2 className="text-2xl font-semibold">{weatherData.name}</h2>
           </div>
           <div className="grid items-center justify-center h-64 mt-7">
             <div className="grid items-center justify-center">

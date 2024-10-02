@@ -1,15 +1,14 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 function forecast({ data }) {
-  const WEEK_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+  const WEEK_DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
   const dayInWeek = new Date().getDay();
   const forecastDays = WEEK_DAYS.slice(dayInWeek, WEEK_DAYS.length).concat(
     WEEK_DAYS.slice(0, dayInWeek)
-  );
+  )
 
   return (
     <div>
@@ -79,7 +78,7 @@ function forecast({ data }) {
         ))}
       </div>
     </div>
-  );
+  )
 }
 
 export default forecast;

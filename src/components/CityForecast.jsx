@@ -3,7 +3,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 
-function CityForecast({value}) {
+function CityForecast({value, inputRef}) {
   const [background, setBackground] = useState("")
   // function timeBackground(){
   //   const time = new Date().getHours()
