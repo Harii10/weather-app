@@ -8,6 +8,7 @@ import CityForecast from "./CityForecast"
 function Search() {
   const [locationInfo, setLocationInfo] = useState("")
   const [location, setLocation] = useState("")
+  const [error, setError] = useState(false)
   const API_KEY = "99ea54ebc825a0dfb653a4c3f5e552d1"
 
   const inputRef = useRef(null)
@@ -21,8 +22,8 @@ function Search() {
       setLocationInfo(data) 
     } 
     catch (error) {
-      console.error("Error fetching weather data by city:")
-      alert("Invalid City Name")
+      console.error("Error fetching weather data by city:", error)
+      setError(true)
     }
   }
 
@@ -37,8 +38,8 @@ function Search() {
     <div className=" bg-black h-lvh text-white">
       <div>
         <div className="pt-7 pl-5">
-          <NavLink to="/weather-app/">
-            <IoMdArrowRoundBack />
+            <NavLink to="/weather-app/">
+              <IoMdArrowRoundBack />
           </NavLink>
         </div>
         <form className="flex justify-center relative " onSubmit={handleSearch}>
@@ -55,7 +56,11 @@ function Search() {
             </button>
           </div>
         </form>
-        <div>{locationInfo && <CityForecast value={locationInfo} />}</div>
+        {error ? (
+          <p>Invalid Input</p>
+        ):(
+          <div>{locationInfo && <CityForecast value={locationInfo} inputValue={inputRef}/>}</div>
+        )} 
       </div>
     </div>
   )

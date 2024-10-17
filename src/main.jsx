@@ -4,6 +4,7 @@ import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 import App from './App.jsx'
 import './index.css'
 import Search from './components/Search.jsx';
+import Error from './components/Error.jsx';
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
   {
     path: "weather-app/search",
     element: <Search />,
+  },
+  {
+    path: '*',
+    element: <Error/>
   }
   
 ]);

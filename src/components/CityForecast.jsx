@@ -3,22 +3,11 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 
-function CityForecast({value, inputRef}) {
-  const [background, setBackground] = useState("")
-  // function timeBackground(){
-  //   const time = new Date().getHours()
-  //   if(time >= 5){
-  //     background = "#4B70F5"
-  //   }
-  //   else if(time >= 18 && time <= 19){
-  //     background = "linear-gradient(to right,#F3904F,#3B4371)"
-  //   }
-  //   else{
-  //     background = "#3652AD"
-  //   }
-  // }
+function CityForecast({value, inputValue}) {
+
   return (
     <div>
+    {}
         <Accordion
               className=" h-fit"
               style={{
